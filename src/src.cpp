@@ -243,7 +243,7 @@ private:
         appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
         appInfo.pEngineName = "No Engine";
         appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
-        appInfo.apiVersion = VK_API_VERSION_1_0;
+        appInfo.apiVersion = VK_API_VERSION_1_3;
 
         auto glfwextensions = getRequiredExtensions();
 
@@ -278,20 +278,20 @@ private:
             throw std::runtime_error("failed to create instance!");
         }
 
-        uint32_t extensionCount = 0;
-        vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
-        std::vector<VkExtensionProperties> extensions(extensionCount);
-        vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, extensions.data());
-
-        std::cout << "Amount of glfw extensions: " << glfwextensions.size() << '\n';
-        for (int32_t i = 0; i < glfwextensions.size(); ++i) {
-            std::cout << '\t' << glfwextensions[i] << '\n';
-        }
-
-        std::cout << "available extensions:\n";
-        for (const auto& extension : extensions) {
-            std::cout << '\t' << extension.extensionName << '\n';
-        }
+//        uint32_t extensionCount = 0;
+//        vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, nullptr);
+//        std::vector<VkExtensionProperties> extensions(extensionCount);
+//        vkEnumerateInstanceExtensionProperties(nullptr, &extensionCount, extensions.data());
+//
+//        std::cout << "Amount of glfw extensions: " << glfwextensions.size() << '\n';
+//        for (int32_t i = 0; i < glfwextensions.size(); ++i) {
+//            std::cout << '\t' << glfwextensions[i] << '\n';
+//        }
+//
+//        std::cout << "available extensions:\n";
+//        for (const auto& extension : extensions) {
+//            std::cout << '\t' << extension.extensionName << '\n';
+//        }
     }
 
     void initVulkan() {
